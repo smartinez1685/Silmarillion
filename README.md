@@ -2,6 +2,10 @@
 
 > One script to rule them all — a Rust/Go-powered terminal environment, rootless and self-contained.
 
+[🇪🇸 Español](README.es.md) · [🇩🇪 Deutsch](README.de.md) · [🇮🇹 Italiano](README.it.md) · [🇸🇪 Svenska](README.sv.md) · [🇷🇺 Русский](README.ru.md) · [🇵🇹 Português](README.pt.md)
+
+---
+
 ## What's in the stack
 
 | Layer | Tool | Lang | Install |
