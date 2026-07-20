@@ -515,8 +515,9 @@ else
 fi
 
 # ── Rust toolchain ───────────────────────────────────────────────────────
-if command -v cargo &>/dev/null; then
-    ok "$(msg rust_installed "$(rustc --version 2>/dev/null || true)")"
+rustc_version="$(rustc --version 2>/dev/null || true)"
+if command -v cargo &>/dev/null && [[ -n "$rustc_version" ]]; then
+    ok "$(msg rust_installed "$rustc_version")"
 else
     log "$(msg rust_installing)"
     curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --no-modify-path
@@ -603,6 +604,7 @@ if command -v kitty &>/dev/null; then
 else
     log "$(msg kitty_installing)"
     curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
+    mkdir -p "$HOME/.local/bin"
     ln -sf "$HOME/.local/kitty.app/bin/kitty" "$HOME/.local/bin/kitty"
     # Desktop launcher
     mkdir -p "$HOME/.local/share/applications" "$HOME/.local/share/icons"
@@ -618,6 +620,7 @@ else
     log "$(msg frogmouth_installing)"
     python3 -m venv "$HOME/.local/venvs/frogmouth"
     "$HOME/.local/venvs/frogmouth/bin/pip" install -q frogmouth
+    mkdir -p "$HOME/.local/bin"
     ln -sf "$HOME/.local/venvs/frogmouth/bin/frogmouth" "$HOME/.local/bin/frogmouth"
     ok "$(msg frogmouth_done)"
 fi
