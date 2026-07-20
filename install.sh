@@ -134,12 +134,13 @@ m_fonts_downloading_mini_en="Downloading UbuntuMono Nerd Font..."
 m_fonts_extracting_en="Extracting fonts..."
 m_fonts_done_en="Nerd Fonts installed (%s variants)"
 m_deploying_configs_en="Deploying config files..."
-m_phase1_en="Phase 1/6 · Theme & Toolchains"
-m_phase2_en="Phase 2/6 · Cargo Tools"
-m_phase3_en="Phase 3/6 · Go Tools"
-m_phase4_en="Phase 4/6 · Applications"
-m_phase5_en="Phase 5/6 · Fonts"
-m_phase6_en="Phase 6/6 · Config Files"
+m_phase1_en="Phase 1/7 · Theme & Toolchains"
+m_phase2_en="Phase 2/7 · Cargo Tools"
+m_phase3_en="Phase 3/7 · Go Tools"
+m_phase4_en="Phase 4/7 · Applications"
+m_phase5_en="Phase 5/7 · Fonts"
+m_phase6_en="Phase 6/7 · Config Files"
+m_phase7_en="Phase 7/7 · Neovim"
 m_sheldon_created_en="~/.config/sheldon/plugins.toml created"
 m_kitty_conf_created_en="~/.config/kitty/kitty.conf created"
 m_zshrc_deployed_en="~/.zshrc deployed (backup at ~/.zshrc.silmarillion.bak)"
@@ -148,9 +149,6 @@ m_profile_updated_en="~/.profile updated (zsh auto-launch)"
 m_sheldon_installing_en="Installing sheldon plugins..."
 m_sheldon_done_en="Sheldon plugins installed"
 m_sheldon_failed_en="sheldon lock failed"
-m_setting_zsh_en="Setting ZSH as default shell..."
-m_zsh_default_en="ZSH is now your default shell (log out & back in)"
-m_zsh_not_default_en="Could not set ZSH as default — run: chsh -s $(command -v zsh)"
 m_install_done_en="Silmarillion Stack installed!"
 m_next_steps_en="Next steps:"
 m_step1_en="1. Open a new terminal (kitty should appear in your app launcher)"
@@ -194,12 +192,13 @@ m_fonts_downloading_mini_es="Descargando UbuntuMono Nerd Font..."
 m_fonts_extracting_es="Extrayendo fuentes..."
 m_fonts_done_es="Nerd Fonts instaladas (%s variantes)"
 m_deploying_configs_es="Desplegando archivos de configuración..."
-m_phase1_es="Fase 1/6 · Tema y Toolchains"
-m_phase2_es="Fase 2/6 · Herramientas Cargo"
-m_phase3_es="Fase 3/6 · Herramientas Go"
-m_phase4_es="Fase 4/6 · Aplicaciones"
-m_phase5_es="Fase 5/6 · Fuentes"
-m_phase6_es="Fase 6/6 · Archivos de Configuración"
+m_phase1_es="Fase 1/7 · Tema y Toolchains"
+m_phase2_es="Fase 2/7 · Herramientas Cargo"
+m_phase3_es="Fase 3/7 · Herramientas Go"
+m_phase4_es="Fase 4/7 · Aplicaciones"
+m_phase5_es="Fase 5/7 · Fuentes"
+m_phase6_es="Fase 6/7 · Archivos de Configuración"
+m_phase7_es="Fase 7/7 · Neovim"
 m_sheldon_created_es="~/.config/sheldon/plugins.toml creado"
 m_kitty_conf_created_es="~/.config/kitty/kitty.conf creado"
 m_zshrc_deployed_es="~/.zshrc desplegado (copia en ~/.zshrc.silmarillion.bak)"
@@ -208,9 +207,6 @@ m_profile_updated_es="~/.profile actualizado (inicio automático de zsh)"
 m_sheldon_installing_es="Instalando plugins de sheldon..."
 m_sheldon_done_es="Plugins de sheldon instalados"
 m_sheldon_failed_es="sheldon lock falló"
-m_setting_zsh_es="Estableciendo ZSH como shell predeterminada..."
-m_zsh_default_es="ZSH es ahora tu shell predeterminada (cierra sesión y vuelve a entrar)"
-m_zsh_not_default_es="No se pudo establecer ZSH como predeterminada — ejecuta: chsh -s $(command -v zsh)"
 m_install_done_es="¡Silmarillion Stack instalado!"
 m_next_steps_es="Próximos pasos:"
 m_step1_es="1. Abre una nueva terminal (kitty debería aparecer en tu lanzador)"
@@ -254,12 +250,13 @@ m_fonts_downloading_mini_de="Lade UbuntuMono Nerd Font herunter..."
 m_fonts_extracting_de="Extrahiere Schriftarten..."
 m_fonts_done_de="Nerd Fonts installiert (%s Varianten)"
 m_deploying_configs_de="Konfigurationsdateien werden bereitgestellt..."
-m_phase1_de="Phase 1/6 · Theme & Toolchains"
-m_phase2_de="Phase 2/6 · Cargo-Werkzeuge"
-m_phase3_de="Phase 3/6 · Go-Werkzeuge"
-m_phase4_de="Phase 4/6 · Anwendungen"
-m_phase5_de="Phase 5/6 · Schriftarten"
-m_phase6_de="Phase 6/6 · Konfigurationsdateien"
+m_phase1_de="Phase 1/7 · Theme & Toolchains"
+m_phase2_de="Phase 2/7 · Cargo-Werkzeuge"
+m_phase3_de="Phase 3/7 · Go-Werkzeuge"
+m_phase4_de="Phase 4/7 · Anwendungen"
+m_phase5_de="Phase 5/7 · Schriftarten"
+m_phase6_de="Phase 6/7 · Konfigurationsdateien"
+m_phase7_de="Phase 7/7 · Neovim"
 m_sheldon_created_de="~/.config/sheldon/plugins.toml erstellt"
 m_kitty_conf_created_de="~/.config/kitty/kitty.conf erstellt"
 m_zshrc_deployed_de="~/.zshrc bereitgestellt (Backup unter ~/.zshrc.silmarillion.bak)"
@@ -268,9 +265,6 @@ m_profile_updated_de="~/.profile aktualisiert (zsh-Autostart)"
 m_sheldon_installing_de="Installiere sheldon-Plugins..."
 m_sheldon_done_de="Sheldon-Plugins installiert"
 m_sheldon_failed_de="sheldon lock fehlgeschlagen"
-m_setting_zsh_de="Setze ZSH als Standardshell..."
-m_zsh_default_de="ZSH ist jetzt deine Standardshell (aus- und einloggen)"
-m_zsh_not_default_de="Konnte ZSH nicht als Standardshell setzen — führe aus: chsh -s $(command -v zsh)"
 m_install_done_de="Silmarillion Stack installiert!"
 m_next_steps_de="Nächste Schritte:"
 m_step1_de="1. Öffne ein neues Terminal (kitty sollte im Launcher erscheinen)"
@@ -314,12 +308,13 @@ m_fonts_downloading_mini_it="Download UbuntuMono Nerd Font..."
 m_fonts_extracting_it="Estrazione font..."
 m_fonts_done_it="Nerd Fonts installate (%s varianti)"
 m_deploying_configs_it="Distribuzione file di configurazione..."
-m_phase1_it="Fase 1/6 · Tema e Toolchain"
-m_phase2_it="Fase 2/6 · Strumenti Cargo"
-m_phase3_it="Fase 3/6 · Strumenti Go"
-m_phase4_it="Fase 4/6 · Applicazioni"
-m_phase5_it="Fase 5/6 · Font"
-m_phase6_it="Fase 6/6 · File di Configurazione"
+m_phase1_it="Fase 1/7 · Tema e Toolchain"
+m_phase2_it="Fase 2/7 · Strumenti Cargo"
+m_phase3_it="Fase 3/7 · Strumenti Go"
+m_phase4_it="Fase 4/7 · Applicazioni"
+m_phase5_it="Fase 5/7 · Font"
+m_phase6_it="Fase 6/7 · File di Configurazione"
+m_phase7_it="Fase 7/7 · Neovim"
 m_sheldon_created_it="~/.config/sheldon/plugins.toml creato"
 m_kitty_conf_created_it="~/.config/kitty/kitty.conf creato"
 m_zshrc_deployed_it="~/.zshrc distribuito (backup in ~/.zshrc.silmarillion.bak)"
@@ -328,9 +323,6 @@ m_profile_updated_it="~/.profile aggiornato (avvio automatico zsh)"
 m_sheldon_installing_it="Installazione plugin sheldon..."
 m_sheldon_done_it="Plugin sheldon installati"
 m_sheldon_failed_it="sheldon lock fallito"
-m_setting_zsh_it="Impostazione ZSH come shell predefinita..."
-m_zsh_default_it="ZSH è ora la tua shell predefinita (esci e rientra)"
-m_zsh_not_default_it="Impossibile impostare ZSH come predefinita — esegui: chsh -s $(command -v zsh)"
 m_install_done_it="Silmarillion Stack installato!"
 m_next_steps_it="Prossimi passi:"
 m_step1_it="1. Apri un nuovo terminale (kitty dovrebbe apparire nel launcher)"
@@ -374,12 +366,13 @@ m_fonts_downloading_mini_sv="Laddar ner UbuntuMono Nerd Font..."
 m_fonts_extracting_sv="Extraherar typsnitt..."
 m_fonts_done_sv="Nerd Fonts installerade (%s varianter)"
 m_deploying_configs_sv="Distribuerar konfigurationsfiler..."
-m_phase1_sv="Fas 1/6 · Tema och verktygskedjor"
-m_phase2_sv="Fas 2/6 · Cargo-verktyg"
-m_phase3_sv="Fas 3/6 · Go-verktyg"
-m_phase4_sv="Fas 4/6 · Applikationer"
-m_phase5_sv="Fas 5/6 · Typsnitt"
-m_phase6_sv="Fas 6/6 · Konfigurationsfiler"
+m_phase1_sv="Fas 1/7 · Tema och verktygskedjor"
+m_phase2_sv="Fas 2/7 · Cargo-verktyg"
+m_phase3_sv="Fas 3/7 · Go-verktyg"
+m_phase4_sv="Fas 4/7 · Applikationer"
+m_phase5_sv="Fas 5/7 · Typsnitt"
+m_phase6_sv="Fas 6/7 · Konfigurationsfiler"
+m_phase7_sv="Fas 7/7 · Neovim"
 m_sheldon_created_sv="~/.config/sheldon/plugins.toml skapad"
 m_kitty_conf_created_sv="~/.config/kitty/kitty.conf skapad"
 m_zshrc_deployed_sv="~/.zshrc distribuerad (säkerhetskopia på ~/.zshrc.silmarillion.bak)"
@@ -388,9 +381,6 @@ m_profile_updated_sv="~/.profile uppdaterad (zsh auto-start)"
 m_sheldon_installing_sv="Installerar sheldon-plugin..."
 m_sheldon_done_sv="Sheldon-plugin installerade"
 m_sheldon_failed_sv="sheldon lock misslyckades"
-m_setting_zsh_sv="Ställer in ZSH som standardskal..."
-m_zsh_default_sv="ZSH är nu ditt standardskal (logga ut och in igen)"
-m_zsh_not_default_sv="Kunde inte ställa in ZSH som standard — kör: chsh -s $(command -v zsh)"
 m_install_done_sv="Silmarillion Stack installerad!"
 m_next_steps_sv="Nästa steg:"
 m_step1_sv="1. Öppna en ny terminal (kitty bör visas i din applikationsstartare)"
@@ -434,12 +424,13 @@ m_fonts_downloading_mini_ru="Загрузка UbuntuMono Nerd Font..."
 m_fonts_extracting_ru="Извлечение шрифтов..."
 m_fonts_done_ru="Nerd Fonts установлены (%s вариантов)"
 m_deploying_configs_ru="Развёртывание конфигурационных файлов..."
-m_phase1_ru="Этап 1/6 · Тема и Toolchain"
-m_phase2_ru="Этап 2/6 · Инструменты Cargo"
-m_phase3_ru="Этап 3/6 · Инструменты Go"
-m_phase4_ru="Этап 4/6 · Приложения"
-m_phase5_ru="Этап 5/6 · Шрифты"
-m_phase6_ru="Этап 6/6 · Конфигурационные файлы"
+m_phase1_ru="Этап 1/7 · Тема и Toolchain"
+m_phase2_ru="Этап 2/7 · Инструменты Cargo"
+m_phase3_ru="Этап 3/7 · Инструменты Go"
+m_phase4_ru="Этап 4/7 · Приложения"
+m_phase5_ru="Этап 5/7 · Шрифты"
+m_phase6_ru="Этап 6/7 · Конфигурационные файлы"
+m_phase7_ru="Этап 7/7 · Neovim"
 m_sheldon_created_ru="~/.config/sheldon/plugins.toml создан"
 m_kitty_conf_created_ru="~/.config/kitty/kitty.conf создан"
 m_zshrc_deployed_ru="~/.zshrc развёрнут (резервная копия: ~/.zshrc.silmarillion.bak)"
@@ -448,9 +439,6 @@ m_profile_updated_ru="~/.profile обновлён (автозапуск zsh)"
 m_sheldon_installing_ru="Установка плагинов sheldon..."
 m_sheldon_done_ru="Плагины sheldon установлены"
 m_sheldon_failed_ru="sheldon lock не удался"
-m_setting_zsh_ru="Установка ZSH в качестве оболочки по умолчанию..."
-m_zsh_default_ru="ZSH теперь ваша оболочка по умолчанию (выйдите и зайдите снова)"
-m_zsh_not_default_ru="Не удалось установить ZSH по умолчанию — выполните: chsh -s $(command -v zsh)"
 m_install_done_ru="Silmarillion Stack установлен!"
 m_next_steps_ru="Следующие шаги:"
 m_step1_ru="1. Откройте новый терминал (kitty должен появиться в панели приложений)"
@@ -494,12 +482,13 @@ m_fonts_downloading_mini_pt="A descarregar UbuntuMono Nerd Font..."
 m_fonts_extracting_pt="A extrair fontes..."
 m_fonts_done_pt="Nerd Fonts instaladas (%s variantes)"
 m_deploying_configs_pt="A implementar ficheiros de configuração..."
-m_phase1_pt="Fase 1/6 · Tema e Toolchains"
-m_phase2_pt="Fase 2/6 · Ferramentas Cargo"
-m_phase3_pt="Fase 3/6 · Ferramentas Go"
-m_phase4_pt="Fase 4/6 · Aplicações"
-m_phase5_pt="Fase 5/6 · Fontes"
-m_phase6_pt="Fase 6/6 · Ficheiros de Configuração"
+m_phase1_pt="Fase 1/7 · Tema e Toolchains"
+m_phase2_pt="Fase 2/7 · Ferramentas Cargo"
+m_phase3_pt="Fase 3/7 · Ferramentas Go"
+m_phase4_pt="Fase 4/7 · Aplicações"
+m_phase5_pt="Fase 5/7 · Fontes"
+m_phase6_pt="Fase 6/7 · Ficheiros de Configuração"
+m_phase7_pt="Fase 7/7 · Neovim"
 m_sheldon_created_pt="~/.config/sheldon/plugins.toml criado"
 m_kitty_conf_created_pt="~/.config/kitty/kitty.conf criado"
 m_zshrc_deployed_pt="~/.zshrc implementado (cópia em ~/.zshrc.silmarillion.bak)"
@@ -508,9 +497,6 @@ m_profile_updated_pt="~/.profile atualizado (início automático do zsh)"
 m_sheldon_installing_pt="A instalar plugins do sheldon..."
 m_sheldon_done_pt="Plugins do sheldon instalados"
 m_sheldon_failed_pt="sheldon lock falhou"
-m_setting_zsh_pt="A definir ZSH como shell padrão..."
-m_zsh_default_pt="ZSH é agora a sua shell padrão (saia e volte a entrar)"
-m_zsh_not_default_pt="Não foi possível definir ZSH como padrão — execute: chsh -s $(command -v zsh)"
 m_install_done_pt="Silmarillion Stack instalado!"
 m_next_steps_pt="Próximos passos:"
 m_step1_pt="1. Abra um novo terminal (o kitty deve aparecer no seu lançador)"
@@ -1033,15 +1019,446 @@ PROFILE
     ok "$(msg profile_updated)"
 fi
 
+# ── Phase 7: Neovim ────────────────────────────────────────────────────
+section "$(msg phase7)"
+
+# Install Neovim if not present
+if command -v nvim &>/dev/null; then
+    ok "Neovim already installed ($(nvim --version 2>/dev/null | head -1))"
+else
+    log "Installing Neovim..."
+    if command -v apt &>/dev/null; then
+        sudo apt install -y neovim 2>/dev/null || {
+            warn "apt failed — installing from GitHub release..."
+            curl -sL https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz -o /tmp/nvim.tar.gz
+            mkdir -p "$HOME/.local"
+            tar -xzf /tmp/nvim.tar.gz -C "$HOME/.local/"
+            ln -sf "$HOME/.local/nvim-linux64/bin/nvim" "$HOME/.local/bin/nvim"
+            rm -f /tmp/nvim.tar.gz
+        }
+    else
+        curl -sL https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz -o /tmp/nvim.tar.gz
+        mkdir -p "$HOME/.local"
+        tar -xzf /tmp/nvim.tar.gz -C "$HOME/.local/"
+        ln -sf "$HOME/.local/nvim-linux64/bin/nvim" "$HOME/.local/bin/nvim"
+        rm -f /tmp/nvim.tar.gz
+    fi
+    ok "Neovim installed"
+fi
+
+# Deploy Neovim config
+log "Deploying Neovim config..."
+mkdir -p "$HOME/.config/nvim/lua/plugins"
+
+# --- init.lua ---
+cat > "$HOME/.config/nvim/init.lua" << 'NVIM_INIT'
+require("settings")
+
+vim.g.mapleader = " "
+vim.g.maplocalleader = "\\"
+vim.g.python3_host_prog = '/usr/bin/python3'
+
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not (vim.uv or vim.loop).fs_stat(lazypath) then
+        vim.fn.system({
+                "git",
+                "clone",
+                "--filter=blob:none",
+                "https://github.com/folke/lazy.nvim.git",
+                "--branch=stable",
+                lazypath,
+        })
+end
+vim.opt.rtp:prepend(lazypath)
+
+require("lazy").setup("plugins")
+NVIM_INIT
+
+# --- lua/settings.lua ---
+cat > "$HOME/.config/nvim/lua/settings.lua" << 'NVIM_SET'
+vim.opt.number = true
+vim.opt.relativenumber = true
+vim.opt.termguicolors = true
+
+vim.api.nvim_create_autocmd("BufReadPost", {
+  callback = function()
+    local mark = vim.api.nvim_buf_get_mark(0, '"')
+    local lcount = vim.api.nvim_buf_line_count(0)
+    if mark[1] > 0 and mark[1] <= lcount then
+      pcall(vim.api.nvim_win_set_cursor, 0, mark)
+    end
+  end,
+})
+
+local function transparent_bg()
+  local groups = { "Normal", "NormalNC", "LineNr", "Folded", "NonText", "SpecialKey", "VertSplit", "SignColumn", "EndOfBuffer" }
+  for _, group in ipairs(groups) do
+    vim.api.nvim_set_hl(0, group, { bg = "NONE", ctermbg = "NONE" })
+  end
+end
+transparent_bg()
+vim.api.nvim_create_autocmd("ColorScheme", { callback = transparent_bg })
+
+vim.api.nvim_create_autocmd("LspAttach", {
+  callback = function(ev)
+    local opts = { buffer = ev.buf }
+    vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
+    vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
+    vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
+    vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
+    vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
+  end,
+})
+NVIM_SET
+
+# --- lua/plugins/core.lua ---
+cat > "$HOME/.config/nvim/lua/plugins/core.lua" << 'NVIM_CORE'
+return {
+  {
+    "mason-org/mason.nvim",
+    config = function()
+      require("mason").setup()
+    end
+  },
+  {
+    "goolord/alpha-nvim",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    config = function()
+      require("alpha").setup(require("alpha.themes.startify").config)
+    end
+  },
+  {
+    "kiddos/gemini.nvim",
+    enabled = false,
+    build = "make",
+    config = function()
+      require("gemini").setup()
+    end
+  },
+  {
+    "gisketch/triforce.nvim",
+    enabled = false,
+    dependencies = { "nvim-lualine/lualine.nvim" }
+  }
+}
+NVIM_CORE
+
+# --- lua/plugins/lsp.lua ---
+cat > "$HOME/.config/nvim/lua/plugins/lsp.lua" << 'NVIM_LSP'
+return {
+  {
+    "neovim/nvim-lspconfig",
+    dependencies = {
+      "williamboman/mason.nvim",
+      "williamboman/mason-lspconfig.nvim",
+      "hrsh7th/cmp-nvim-lsp",
+      "b0o/SchemaStore.nvim",
+    },
+    config = function()
+      require("mason").setup()
+      require("mason-lspconfig").setup({
+        ensure_installed = { "pyright", "yamlls", "lua_ls" },
+      })
+      local capabilities = require("cmp_nvim_lsp").default_capabilities()
+      vim.lsp.config("pyright", {
+        install = { cmd = { "pyright-langserver", "--stdio" } },
+        options = { capabilities = capabilities }
+      })
+      vim.lsp.config("yamlls", {
+        install = { cmd = { "yaml-language-server", "--stdio" } },
+        options = {
+          capabilities = capabilities,
+          settings = {
+            yaml = {
+              schemaStore = { enable = false, url = "" },
+              schemas = require("schemastore").yaml.schemas(),
+            },
+          },
+        }
+      })
+      vim.lsp.config("lua_ls", {
+        options = {
+          capabilities = capabilities,
+          settings = { Lua = { diagnostics = { globals = { "vim" } } } },
+        }
+      })
+      vim.lsp.enable("pyright")
+      vim.lsp.enable("yamlls")
+      vim.lsp.enable("lua_ls")
+    end,
+  },
+}
+NVIM_LSP
+
+# --- lua/plugins/completion.lua ---
+cat > "$HOME/.config/nvim/lua/plugins/completion.lua" << 'NVIM_CMP'
+return {
+  {
+    "hrsh7th/nvim-cmp",
+    dependencies = {
+      "hrsh7th/cmp-path",
+      "hrsh7th/cmp-nvim-lsp",
+      "hrsh7th/cmp-buffer",
+      "L3MON4D3/LuaSnip",
+      "saadparwaiz1/cmp_luasnip",
+    },
+    config = function()
+      local cmp = require("cmp")
+      local luasnip = require("luasnip")
+      cmp.setup({
+        snippet = {
+          expand = function(args)
+            luasnip.lsp_expand(args.body)
+          end,
+        },
+        mapping = cmp.mapping.preset.insert({
+          ["<C-b>"] = cmp.mapping.scroll_docs(-4),
+          ["<C-f>"] = cmp.mapping.scroll_docs(4),
+          ["<C-Space>"] = cmp.mapping.complete(),
+          ["<C-e>"] = cmp.mapping.abort(),
+          ["<CR>"] = cmp.mapping.confirm({ select = true }),
+          ["<Tab>"] = cmp.mapping(function(fallback)
+            if cmp.visible() then
+              cmp.select_next_item()
+            elseif luasnip.expand_or_jumpable() then
+              luasnip.expand_or_jump()
+            else
+              fallback()
+            end
+          end, { "i", "s" }),
+        }),
+        sources = cmp.config.sources({
+          { name = "nvim_lsp" },
+          { name = "luasnip" },
+          { name = "path" },
+        }, {
+          { name = "buffer" },
+        }),
+      })
+    end,
+  },
+}
+NVIM_CMP
+
+# --- lua/plugins/lualine.lua ---
+cat > "$HOME/.config/nvim/lua/plugins/lualine.lua" << 'NVIM_LUALINE'
+return {
+  {
+    "nvim-lualine/lualine.nvim",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    config = function()
+      local lualine = require("lualine")
+      local function lsp_clients()
+        local clients = vim.lsp.get_clients({ bufnr = 0 })
+        if next(clients) == nil then return "No LSP" end
+        local c_names = {}
+        for _, client in pairs(clients) do
+          table.insert(c_names, client.name)
+        end
+        return "⚙ " .. table.concat(c_names, ", ")
+      end
+      lualine.setup({
+        options = {
+          theme = "dracula",
+          component_separators = { left = "│", right = "│" },
+          section_separators = { left = "", right = "" },
+          globalstatus = true,
+        },
+        sections = {
+          lualine_a = { "mode" },
+          lualine_b = { "branch", "diff", "diagnostics" },
+          lualine_c = { { "filename", path = 1 } },
+          lualine_x = { lsp_clients, "encoding", "fileformat", "filetype" },
+          lualine_y = { "progress" },
+          lualine_z = { "location" },
+        },
+      })
+    end,
+  },
+}
+NVIM_LUALINE
+
+# --- lua/plugins/telescope.lua ---
+cat > "$HOME/.config/nvim/lua/plugins/telescope.lua" << 'NVIM_TELESCOPE'
+return {
+  {
+    "nvim-telescope/telescope.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+      "nvim-tree/nvim-web-devicons",
+    },
+    config = function()
+      local telescope = require("telescope")
+      local actions = require("telescope.actions")
+      telescope.setup({
+        defaults = {
+          path_display = { "truncate" },
+          preview = { treesitter = false },
+          mappings = {
+            i = {
+              ["<C-k>"] = actions.move_selection_previous,
+              ["<C-j>"] = actions.move_selection_next,
+            },
+          },
+        },
+      })
+      telescope.load_extension("fzf")
+      local km = vim.keymap
+      km.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Find Files" })
+      km.set("n", "<leader>fs", "<cmd>Telescope live_grep<cr>", { desc = "Find String" })
+      km.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>", { desc = "Find Buffers" })
+    end,
+  },
+}
+NVIM_TELESCOPE
+
+# --- lua/plugins/treesitter.lua ---
+cat > "$HOME/.config/nvim/lua/plugins/treesitter.lua" << 'NVIM_TS'
+return {
+  {
+    "nvim-treesitter/nvim-treesitter",
+    build = ":TSUpdate",
+    config = function()
+      require("nvim-treesitter").setup({
+        ensure_installed = {
+          "python", "yaml", "dockerfile", "markdown",
+          "markdown_inline", "html", "javascript", "lua", "vim", "bash"
+        },
+        highlight = { enable = true, additional_vim_regex_highlighting = false },
+        indent = { enable = true },
+      })
+    end,
+  },
+}
+NVIM_TS
+
+# --- lua/plugins/oil.lua ---
+cat > "$HOME/.config/nvim/lua/plugins/oil.lua" << 'NVIM_OIL'
+return {
+  {
+    "stevearc/oil.nvim",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    config = function()
+      require("oil").setup({
+        default_file_explorer = true,
+        skip_confirm_for_simple_edits = true,
+        view_options = { show_hidden = true },
+        float = { padding = 2, max_width = 80, max_height = 20, border = "rounded" },
+      })
+      vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
+      vim.keymap.set("n", "<leader>e", "<CMD>Oil --float<CR>", { desc = "File Explorer" })
+    end,
+  },
+}
+NVIM_OIL
+
+# --- lua/plugins/formatting.lua ---
+cat > "$HOME/.config/nvim/lua/plugins/formatting.lua" << 'NVIM_FMT'
+return {
+  {
+    "stevearc/conform.nvim",
+    event = { "BufWritePre" },
+    cmd = { "ConformInfo" },
+    opts = {
+      formatters_by_ft = {
+        python = { "ruff_fix", "ruff_format", "black" },
+        lua = { "stylua" },
+      },
+      formatters = {
+        black = { command = "uvx", args = { "black", "--stdin-filename", "$FILENAME", "-" } },
+        ruff_fix = { command = "uvx", args = { "ruff", "check", "--fix", "--force-exclude", "--exit-zero", "--no-cache", "--stdin-filename", "$FILENAME", "-" } },
+        ruff_format = { command = "uvx", args = { "ruff", "format", "--force-exclude", "--stdin-filename", "$FILENAME", "-" } },
+      },
+      format_on_save = { timeout_ms = 1000, lsp_fallback = true },
+    },
+  },
+}
+NVIM_FMT
+
+# --- lua/plugins/indent.lua ---
+cat > "$HOME/.config/nvim/lua/plugins/indent.lua" << 'NVIM_INDENT'
+return {
+  {
+    "lukas-reineke/indent-blankline.nvim",
+    main = "ibl",
+    event = { "BufReadPost", "BufNewFile" },
+    opts = {
+      indent = { char = "│", tab_char = "│" },
+      scope = { enabled = true, show_start = false, show_end = false, highlight = "IblScope" },
+      exclude = { filetypes = { "help", "alpha", "dashboard", "neo-tree", "Trouble", "trouble", "lazy", "mason", "notify", "toggleterm", "lazyterm" } },
+    },
+    config = function(_, opts)
+      vim.api.nvim_set_hl(0, "IblScope", { fg = "#bd93f9", bold = true })
+      vim.api.nvim_set_hl(0, "IblIndent", { fg = "#6272a4" })
+      require("ibl").setup(opts)
+    end,
+  },
+}
+NVIM_INDENT
+
+# --- lua/plugins/alpha.lua ---
+cat > "$HOME/.config/nvim/lua/plugins/alpha.lua" << 'NVIM_ALPHA'
+return {
+  {
+    "goolord/alpha-nvim",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    lazy = false,
+    priority = 1000,
+    config = function()
+      local alpha = require("alpha")
+      local dashboard = require("alpha.themes.dashboard")
+      dashboard.section.header.val = {
+        [[                                                     /$$       /$$            /$$   /$$                                /$$            ]],
+        [[                                                    | $$      | $$           | $$$ | $$                               |__/            ]],
+        [[ /$$$$$$$   /$$$$$$ | $$$$$$$ | $$  /$$$$$$ | $$$$| $$  /$$$$$$   /$$$$$$  /$$    /$$ /$$ /$$$$$$/$$$$ ]],
+        [[| $$__  $$ /$$__  $$| $$__  $$| $$ /$$__  $$| $$ $$ $$ /$$__  $$ /$$__  $$|  $$  /$$/| $$| $$_  $$_  $$]],
+        [[| $$  \ $$| $$  \ $$| $$  \ $$| $$| $$$$$$$$| $$  $$$$| $$$$$$$$| $$  \ $$ \  $$/$$/ | $$| $$ \ $$ \ $$]],
+        [[| $$  | $$| $$  | $$| $$  | $$| $$| $$_____/| $$\  $$$| $$_____/| $$  | $$  \\  $$$/  | $$| $$ | $$ | $$]],
+        [[| $$  | $$|  $$$$$$/| $$$$$$$/| $$|  $$$$$$$| $$ \  $$|  $$$$$$$|  $$$$$$/   \\  $/   | $$| $$ | $$ | $$]],
+        [[|__/  |__/ \______/ |_______/ |__/ \_______/|__/  \__/ \_______/ \______/     \_/    |__/|__/ |__/ |__/]],
+      }
+      dashboard.section.buttons.val = {
+        dashboard.button("f", "  Find file", "<cmd>Telescope find_files<cr>"),
+        dashboard.button("r", "  Recent files", "<cmd>Telescope oldfiles<cr>"),
+        dashboard.button("s", "  Find text", "<cmd>Telescope live_grep<cr>"),
+        dashboard.button("g", "  LazyGit", "<cmd>LazyGit<cr>"),
+        dashboard.button("q", "  Quit", "<cmd>qa<cr>"),
+      }
+      dashboard.section.footer.val = "Привет, Alex. Ready to code."
+      dashboard.section.header.opts.hl = "AlphaHeader"
+      dashboard.section.buttons.opts.hl = "AlphaButtons"
+      dashboard.section.footer.opts.hl = "AlphaFooter"
+      alpha.setup(dashboard.config)
+      vim.api.nvim_set_hl(0, "AlphaHeader", { fg = "#bd93f9", bold = true })
+      vim.api.nvim_set_hl(0, "AlphaButtons", { fg = "#8be9fd" })
+      vim.api.nvim_set_hl(0, "AlphaFooter", { fg = "#6272a4", italic = true })
+      vim.opt.shortmess:append("I")
+      vim.keymap.set("n", "<leader>a", "<cmd>Alpha<cr>", { desc = "Dashboard" })
+    end,
+  },
+}
+NVIM_ALPHA
+
+# --- lua/plugins/lazygit.lua ---
+cat > "$HOME/.config/nvim/lua/plugins/lazygit.lua" << 'NVIM_LAZYGIT'
+return {
+  {
+    "kdheepak/lazygit.nvim",
+    cmd = { "LazyGit", "LazyGitConfig", "LazyGitCurrentFile", "LazyGitFilter", "LazyGitFilterCurrentFile" },
+    dependencies = { "nvim-lua/plenary.nvim" },
+    keys = { { "<leader>lg", "<cmd>LazyGit<cr>", desc = "Open LazyGit" } },
+  },
+}
+NVIM_LAZYGIT
+
+ok "Neovim config deployed"
+log "Installing Neovim plugins (lazy.nvim)..."
+nvim --headless "+Lazy! sync" +qa 2>/dev/null && ok "Neovim plugins installed" || warn "Neovim plugin sync failed — run nvim manually to complete"
+
 # ── Sheldon lock ─────────────────────────────────────────────────────────
 log "$(msg sheldon_installing)"
 sheldon lock 2>/dev/null && ok "$(msg sheldon_done)" || warn "$(msg sheldon_failed)"
-
-# ── Set ZSH as default shell ────────────────────────────────────────────
-if [[ "$SHELL" != "$(command -v zsh)" ]]; then
-    log "$(msg setting_zsh)"
-    chsh -s "$(command -v zsh)" 2>/dev/null && ok "$(msg zsh_default)" || warn "$(msg zsh_not_default)"
-fi
 
 # ── Done ─────────────────────────────────────────────────────────────────
 echo ""
