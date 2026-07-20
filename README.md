@@ -12,7 +12,7 @@
 |-------|------|------|---------|
 | Terminal | **kitty** | C/Python | rootless installer |
 | Shell | **ZSH** | C | system |
-| Prompt | **powerlevel10k** | ZSH | git clone (bundled) |
+| Prompt | **powerlevel10k** | ZSH | git clone |
 | Plugin mgr | **sheldon** | Rust | cargo |
 | Syntax highlight | **fast-syntax-highlighting** | ZSH | sheldon |
 | Autosuggestions | **zsh-autosuggestions** | ZSH | sheldon |
@@ -55,10 +55,11 @@ The installer is **idempotent** — run it multiple times safely.
 6. Installs kitty via official rootless installer
 7. Installs frogmouth via pip in a venv at `~/.local/venvs/frogmouth`
 8. Installs zed via official curl script
-9. Downloads all 60+ Nerd Fonts to `~/.local/share/fonts/`
-10. Deploys configs: `.zshrc`, `.bashrc`, `.profile`, kitty.conf, sheldon plugins.toml
-11. Runs `sheldon lock` to clone ZSH plugins
-12. Runs `fc-cache -fv` to register fonts
+9. Downloads UbuntuMono Nerd Font to `~/.local/share/fonts/` (optionally all 60+ families)
+10. Deploys configs: `.zshrc`, `.bashrc`, `.profile`, `.p10k.zsh`, kitty.conf, sheldon plugins.toml
+11. Sets ZSH as the default shell
+12. Runs `sheldon lock` to clone ZSH plugins
+13. Runs `fc-cache -fv` to register fonts
 
 ## No root required
 
@@ -71,17 +72,18 @@ Everything installs to `~/.local/`, `~/.cargo/`, `~/.go/`, and `~/.config/`. No 
 ├── .zshrc                  # Main ZSH config (p10k + all tools)
 ├── .bashrc                 # Bash config (same tool aliases)
 ├── .profile                # Auto-launches zsh on login
+├── .p10k.zsh             # Pre-configured powerlevel10k prompt
 ├── .config/
 │   ├── kitty/kitty.conf    # Terminal: UbuntuMono Nerd Font, 15pt, 75% opacity
 │   └── sheldon/plugins.toml
 ├── .local/
 │   ├── bin/                # User binaries (kitty, frogmouth, zed, ...)
-│   ├── share/fonts/        # 60+ Nerd Font families
+│   ├── share/fonts/        # Nerd Fonts
 │   ├── go/                 # Go toolchain
 │   └── kitty.app/          # Kitty installation
+├── .powerlevel10k/         # p10k theme
 ├── .cargo/bin/             # Rust toolchain + cargo tools
 ├── Silmarillion/
-│   ├── powerlevel10k/      # p10k theme
 │   ├── install.sh          # This installer
 │   └── README.md           # This file
 └── go/bin/                 # Go binaries (fzf, direnv, lazygit)
@@ -89,16 +91,8 @@ Everything installs to `~/.local/`, `~/.cargo/`, `~/.go/`, and `~/.config/`. No 
 
 ## Post-install
 
-Open a **new terminal** — p10k will launch its config wizard on first run. Choose:
-
-- **Nerd Font v3** + powerline
-- **Classic** style
-- **Unicode** icons
-- **Darkest** colors
-- **2-line** prompt
-- **Round** separators
-
-Re-run anytime with `p10k configure`.
+Open a **new terminal** — you'll get a pre-configured p10k prompt immediately.
+Customize anytime with `p10k configure`.
 
 ## Customizing
 

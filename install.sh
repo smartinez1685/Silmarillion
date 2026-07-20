@@ -129,6 +129,8 @@ m_zed_installing_en="Installing zed..."
 m_zed_done_en="zed installed"
 m_fonts_installed_en="Nerd Fonts already installed (%s variants)"
 m_fonts_downloading_en="Downloading Nerd Fonts (60+ families)..."
+m_fonts_ask_full_en="Download all 60+ Nerd Font families? (~7 GB, otherwise just UbuntuMono)"
+m_fonts_downloading_mini_en="Downloading UbuntuMono Nerd Font..."
 m_fonts_extracting_en="Extracting fonts..."
 m_fonts_done_en="Nerd Fonts installed (%s variants)"
 m_deploying_configs_en="Deploying config files..."
@@ -146,10 +148,13 @@ m_profile_updated_en="~/.profile updated (zsh auto-launch)"
 m_sheldon_installing_en="Installing sheldon plugins..."
 m_sheldon_done_en="Sheldon plugins installed"
 m_sheldon_failed_en="sheldon lock failed"
+m_setting_zsh_en="Setting ZSH as default shell..."
+m_zsh_default_en="ZSH is now your default shell (log out & back in)"
+m_zsh_not_default_en="Could not set ZSH as default — run: chsh -s $(command -v zsh)"
 m_install_done_en="Silmarillion Stack installed!"
 m_next_steps_en="Next steps:"
 m_step1_en="1. Open a new terminal (kitty should appear in your app launcher)"
-m_step2_en="2. p10k will launch its config wizard on first zsh run"
+m_step2_en="2. p10k prompt is pre-configured — run 'p10k configure' to customize"
 m_step3_en="3. Install a Node version:  fnm install 22"
 m_step4_en="4. Run 'p10k configure' anytime to redo prompt setup"
 # --- Español ---
@@ -184,6 +189,8 @@ m_zed_installing_es="Instalando zed..."
 m_zed_done_es="zed instalado"
 m_fonts_installed_es="Nerd Fonts ya instaladas (%s variantes)"
 m_fonts_downloading_es="Descargando Nerd Fonts (60+ familias)..."
+m_fonts_ask_full_es="¿Descargar las 60+ familias Nerd Font? (~7 GB, solo UbuntuMono sino)"
+m_fonts_downloading_mini_es="Descargando UbuntuMono Nerd Font..."
 m_fonts_extracting_es="Extrayendo fuentes..."
 m_fonts_done_es="Nerd Fonts instaladas (%s variantes)"
 m_deploying_configs_es="Desplegando archivos de configuración..."
@@ -201,10 +208,13 @@ m_profile_updated_es="~/.profile actualizado (inicio automático de zsh)"
 m_sheldon_installing_es="Instalando plugins de sheldon..."
 m_sheldon_done_es="Plugins de sheldon instalados"
 m_sheldon_failed_es="sheldon lock falló"
+m_setting_zsh_es="Estableciendo ZSH como shell predeterminada..."
+m_zsh_default_es="ZSH es ahora tu shell predeterminada (cierra sesión y vuelve a entrar)"
+m_zsh_not_default_es="No se pudo establecer ZSH como predeterminada — ejecuta: chsh -s $(command -v zsh)"
 m_install_done_es="¡Silmarillion Stack instalado!"
 m_next_steps_es="Próximos pasos:"
 m_step1_es="1. Abre una nueva terminal (kitty debería aparecer en tu lanzador)"
-m_step2_es="2. p10k lanzará el asistente de configuración en la primera ejecución de zsh"
+m_step2_es="2. El prompt de p10k ya está configurado — ejecuta 'p10k configure' para personalizar"
 m_step3_es="3. Instala una versión de Node:  fnm install 22"
 m_step4_es="4. Ejecuta 'p10k configure' para rehacer la configuración del prompt"
 # --- Deutsch ---
@@ -239,6 +249,8 @@ m_zed_installing_de="Installiere zed..."
 m_zed_done_de="zed installiert"
 m_fonts_installed_de="Nerd Fonts bereits installiert (%s Varianten)"
 m_fonts_downloading_de="Lade Nerd Fonts herunter (60+ Familien)..."
+m_fonts_ask_full_de="Alle 60+ Nerd Font-Familien herunterladen? (~7 GB, sonst nur UbuntuMono)"
+m_fonts_downloading_mini_de="Lade UbuntuMono Nerd Font herunter..."
 m_fonts_extracting_de="Extrahiere Schriftarten..."
 m_fonts_done_de="Nerd Fonts installiert (%s Varianten)"
 m_deploying_configs_de="Konfigurationsdateien werden bereitgestellt..."
@@ -256,10 +268,13 @@ m_profile_updated_de="~/.profile aktualisiert (zsh-Autostart)"
 m_sheldon_installing_de="Installiere sheldon-Plugins..."
 m_sheldon_done_de="Sheldon-Plugins installiert"
 m_sheldon_failed_de="sheldon lock fehlgeschlagen"
+m_setting_zsh_de="Setze ZSH als Standardshell..."
+m_zsh_default_de="ZSH ist jetzt deine Standardshell (aus- und einloggen)"
+m_zsh_not_default_de="Konnte ZSH nicht als Standardshell setzen — führe aus: chsh -s $(command -v zsh)"
 m_install_done_de="Silmarillion Stack installiert!"
 m_next_steps_de="Nächste Schritte:"
 m_step1_de="1. Öffne ein neues Terminal (kitty sollte im Launcher erscheinen)"
-m_step2_de="2. p10k startet den Konfigurationsassistenten beim ersten zsh-Start"
+m_step2_de="2. p10k-Prompt ist vorkonfiguriert — passe es mit 'p10k configure' an"
 m_step3_de="3. Installiere eine Node-Version:  fnm install 22"
 m_step4_de="4. Führe 'p10k configure' aus, um das Prompt anzupassen"
 # --- Italiano ---
@@ -294,6 +309,8 @@ m_zed_installing_it="Installazione zed..."
 m_zed_done_it="zed installato"
 m_fonts_installed_it="Nerd Fonts già installate (%s varianti)"
 m_fonts_downloading_it="Download Nerd Fonts (60+ famiglie)..."
+m_fonts_ask_full_it="Scaricare tutte le 60+ famiglie Nerd Font? (~7 GB, altrimenti solo UbuntuMono)"
+m_fonts_downloading_mini_it="Download UbuntuMono Nerd Font..."
 m_fonts_extracting_it="Estrazione font..."
 m_fonts_done_it="Nerd Fonts installate (%s varianti)"
 m_deploying_configs_it="Distribuzione file di configurazione..."
@@ -311,10 +328,13 @@ m_profile_updated_it="~/.profile aggiornato (avvio automatico zsh)"
 m_sheldon_installing_it="Installazione plugin sheldon..."
 m_sheldon_done_it="Plugin sheldon installati"
 m_sheldon_failed_it="sheldon lock fallito"
+m_setting_zsh_it="Impostazione ZSH come shell predefinita..."
+m_zsh_default_it="ZSH è ora la tua shell predefinita (esci e rientra)"
+m_zsh_not_default_it="Impossibile impostare ZSH come predefinita — esegui: chsh -s $(command -v zsh)"
 m_install_done_it="Silmarillion Stack installato!"
 m_next_steps_it="Prossimi passi:"
 m_step1_it="1. Apri un nuovo terminale (kitty dovrebbe apparire nel launcher)"
-m_step2_it="2. p10k avvierà la procedura guidata al primo avvio di zsh"
+m_step2_it="2. Il prompt p10k è preconfigurato — esegui 'p10k configure' per personalizzare"
 m_step3_it="3. Installa una versione Node:  fnm install 22"
 m_step4_it="4. Esegui 'p10k configure' per riconfigurare il prompt"
 # --- Svenska ---
@@ -349,6 +369,8 @@ m_zed_installing_sv="Installerar zed..."
 m_zed_done_sv="zed installerat"
 m_fonts_installed_sv="Nerd Fonts redan installerade (%s varianter)"
 m_fonts_downloading_sv="Laddar ner Nerd Fonts (60+ familjer)..."
+m_fonts_ask_full_sv="Ladda ner alla 60+ Nerd Font-familjer? (~7 GB, annars bara UbuntuMono)"
+m_fonts_downloading_mini_sv="Laddar ner UbuntuMono Nerd Font..."
 m_fonts_extracting_sv="Extraherar typsnitt..."
 m_fonts_done_sv="Nerd Fonts installerade (%s varianter)"
 m_deploying_configs_sv="Distribuerar konfigurationsfiler..."
@@ -366,10 +388,13 @@ m_profile_updated_sv="~/.profile uppdaterad (zsh auto-start)"
 m_sheldon_installing_sv="Installerar sheldon-plugin..."
 m_sheldon_done_sv="Sheldon-plugin installerade"
 m_sheldon_failed_sv="sheldon lock misslyckades"
+m_setting_zsh_sv="Ställer in ZSH som standardskal..."
+m_zsh_default_sv="ZSH är nu ditt standardskal (logga ut och in igen)"
+m_zsh_not_default_sv="Kunde inte ställa in ZSH som standard — kör: chsh -s $(command -v zsh)"
 m_install_done_sv="Silmarillion Stack installerad!"
 m_next_steps_sv="Nästa steg:"
 m_step1_sv="1. Öppna en ny terminal (kitty bör visas i din applikationsstartare)"
-m_step2_sv="2. p10k startar konfigurationsguiden vid första zsh-körningen"
+m_step2_sv="2. p10k-promptet är förkonfigurerat — kör 'p10k configure' för att anpassa"
 m_step3_sv="3. Installera en Node-version:  fnm install 22"
 m_step4_sv="4. Kör 'p10k configure' när som helst för att göra om prompt-inställningarna"
 # --- Русский ---
@@ -404,6 +429,8 @@ m_zed_installing_ru="Установка zed..."
 m_zed_done_ru="zed установлен"
 m_fonts_installed_ru="Nerd Fonts уже установлены (%s вариантов)"
 m_fonts_downloading_ru="Загрузка Nerd Fonts (60+ семейств)..."
+m_fonts_ask_full_ru="Загрузить все 60+ семейств Nerd Font? (~7 ГБ, иначе только UbuntuMono)"
+m_fonts_downloading_mini_ru="Загрузка UbuntuMono Nerd Font..."
 m_fonts_extracting_ru="Извлечение шрифтов..."
 m_fonts_done_ru="Nerd Fonts установлены (%s вариантов)"
 m_deploying_configs_ru="Развёртывание конфигурационных файлов..."
@@ -421,10 +448,13 @@ m_profile_updated_ru="~/.profile обновлён (автозапуск zsh)"
 m_sheldon_installing_ru="Установка плагинов sheldon..."
 m_sheldon_done_ru="Плагины sheldon установлены"
 m_sheldon_failed_ru="sheldon lock не удался"
+m_setting_zsh_ru="Установка ZSH в качестве оболочки по умолчанию..."
+m_zsh_default_ru="ZSH теперь ваша оболочка по умолчанию (выйдите и зайдите снова)"
+m_zsh_not_default_ru="Не удалось установить ZSH по умолчанию — выполните: chsh -s $(command -v zsh)"
 m_install_done_ru="Silmarillion Stack установлен!"
 m_next_steps_ru="Следующие шаги:"
 m_step1_ru="1. Откройте новый терминал (kitty должен появиться в панели приложений)"
-m_step2_ru="2. p10k запустит мастер настройки при первом запуске zsh"
+m_step2_ru="2. Приглашение p10k предварительно настроено — выполните 'p10k configure' для настройки"
 m_step3_ru="3. Установите версию Node:  fnm install 22"
 m_step4_ru="4. Выполните 'p10k configure' для перенастройки приглашения"
 # --- Português ---
@@ -459,6 +489,8 @@ m_zed_installing_pt="A instalar zed..."
 m_zed_done_pt="zed instalado"
 m_fonts_installed_pt="Nerd Fonts já instaladas (%s variantes)"
 m_fonts_downloading_pt="A descarregar Nerd Fonts (60+ famílias)..."
+m_fonts_ask_full_pt="Descarregar todas as 60+ famílias Nerd Font? (~7 GB, senão apenas UbuntuMono)"
+m_fonts_downloading_mini_pt="A descarregar UbuntuMono Nerd Font..."
 m_fonts_extracting_pt="A extrair fontes..."
 m_fonts_done_pt="Nerd Fonts instaladas (%s variantes)"
 m_deploying_configs_pt="A implementar ficheiros de configuração..."
@@ -476,10 +508,13 @@ m_profile_updated_pt="~/.profile atualizado (início automático do zsh)"
 m_sheldon_installing_pt="A instalar plugins do sheldon..."
 m_sheldon_done_pt="Plugins do sheldon instalados"
 m_sheldon_failed_pt="sheldon lock falhou"
+m_setting_zsh_pt="A definir ZSH como shell padrão..."
+m_zsh_default_pt="ZSH é agora a sua shell padrão (saia e volte a entrar)"
+m_zsh_not_default_pt="Não foi possível definir ZSH como padrão — execute: chsh -s $(command -v zsh)"
 m_install_done_pt="Silmarillion Stack instalado!"
 m_next_steps_pt="Próximos passos:"
 m_step1_pt="1. Abra um novo terminal (o kitty deve aparecer no seu lançador)"
-m_step2_pt="2. O p10k iniciará o assistente de configuração na primeira execução do zsh"
+m_step2_pt="2. O prompt p10k está pré-configurado — execute 'p10k configure' para personalizar"
 m_step3_pt="3. Instale uma versão do Node:  fnm install 22"
 m_step4_pt="4. Execute 'p10k configure' para reconfigurar o prompt"
 
@@ -506,11 +541,12 @@ fi
 section "$(msg phase1)"
 
 # ── Powerlevel10k ────────────────────────────────────────────────────────
-if [[ -f "$REPO_DIR/powerlevel10k/powerlevel10k.zsh-theme" ]]; then
+P10K_DIR="$HOME/.powerlevel10k"
+if [[ -f "$P10K_DIR/powerlevel10k.zsh-theme" ]]; then
     ok "$(msg p10k_present)"
 else
     log "$(msg p10k_cloning)"
-    git clone --depth 1 https://github.com/romkatv/powerlevel10k.git "$REPO_DIR/powerlevel10k"
+    git clone --depth 1 https://github.com/romkatv/powerlevel10k.git "$P10K_DIR"
     ok "$(msg p10k_cloned)"
 fi
 
@@ -643,30 +679,42 @@ NERD_FONTS_VERSION="v3.4.0"
 if fc-list 2>/dev/null | grep -qi "Nerd Font"; then
     ok "$(msg fonts_installed "$(fc-list | grep -ci 'Nerd Font')")"
 else
-    log "$(msg fonts_downloading)"
     mkdir -p "$FONT_DIR"
-    NERD_FONTS=(
-        0xProto 3270 AdwaitaMono Agave AnonymousPro Arimo
-        AtkinsonHyperlegibleMono AurulentSansMono BigBlueTerminal
-        BitstreamVeraSansMono IBMPlexMono CascadiaCode CascadiaMono
-        CodeNewRoman ComicShannsMono CommitMono Cousine D2Coding
-        DaddyTimeMono DejaVuSansMono DepartureMono DroidSansMono
-        EnvyCodeR FantasqueSansMono FiraCode FiraMono GeistMono
-        Go-Mono Gohu Hack Hasklig HeavyData Hermit iA-Writer
-        Inconsolata InconsolataGo InconsolataLGC IntelOneMono Iosevka
-        IosevkaTerm IosevkaTermSlab JetBrainsMono Lekton LiberationMono
-        Lilex MartianMono Meslo Monaspace Monofur Monoid Mononoki MPlus
-        Noto NerdFontsSymbolsOnly OpenDyslexic Overpass ProFont
-        ProggyClean Recursive RobotoMono ShareTechMono SourceCodePro
-        SpaceMono Terminus Tinos Ubuntu UbuntuMono UbuntuSans VictorMono ZedMono
-    )
+    FONT_FAMILIES=("UbuntuMono")
+    # Ask about full font set when interactive
+    if [[ -z "${SILMARILLION_FULL_FONTS:-}" && -t 0 ]]; then
+        log "$(msg fonts_ask_full)"
+        printf "  [y/N] "
+        read -r full_fonts_choice
+        case "$full_fonts_choice" in y|Y|yes|YES) SILMARILLION_FULL_FONTS=1 ;; esac
+    fi
+    if [[ -n "${SILMARILLION_FULL_FONTS:-}" ]]; then
+        log "$(msg fonts_downloading)"
+        FONT_FAMILIES=(
+            0xProto 3270 AdwaitaMono Agave AnonymousPro Arimo
+            AtkinsonHyperlegibleMono AurulentSansMono BigBlueTerminal
+            BitstreamVeraSansMono IBMPlexMono CascadiaCode CascadiaMono
+            CodeNewRoman ComicShannsMono CommitMono Cousine D2Coding
+            DaddyTimeMono DejaVuSansMono DepartureMono DroidSansMono
+            EnvyCodeR FantasqueSansMono FiraCode FiraMono GeistMono
+            Go-Mono Gohu Hack Hasklig HeavyData Hermit iA-Writer
+            Inconsolata InconsolataGo InconsolataLGC IntelOneMono Iosevka
+            IosevkaTerm IosevkaTermSlab JetBrainsMono Lekton LiberationMono
+            Lilex MartianMono Meslo Monaspace Monofur Monoid Mononoki MPlus
+            Noto NerdFontsSymbolsOnly OpenDyslexic Overpass ProFont
+            ProggyClean Recursive RobotoMono ShareTechMono SourceCodePro
+            SpaceMono Terminus Tinos Ubuntu UbuntuMono UbuntuSans VictorMono ZedMono
+        )
+    else
+        log "$(msg fonts_downloading_mini)"
+    fi
     BASE="https://github.com/ryanoasis/nerd-fonts/releases/download/$NERD_FONTS_VERSION"
-    for font in "${NERD_FONTS[@]}"; do
+    for font in "${FONT_FAMILIES[@]}"; do
         curl -sL "$BASE/$font.zip" -o "/tmp/${font}.zip" &
     done
     wait
     log "$(msg fonts_extracting)"
-    for font in "${NERD_FONTS[@]}"; do
+    for font in "${FONT_FAMILIES[@]}"; do
         unzip -oq "/tmp/${font}.zip" -d "$FONT_DIR/${font}" 2>/dev/null || true
         rm -f "/tmp/${font}.zip"
     done
@@ -781,12 +829,40 @@ if command -v sheldon > /dev/null; then
 fi
 
 # --- Powerlevel10k prompt ------------------------------------------------
-source ~/Silmarillion/powerlevel10k/powerlevel10k.zsh-theme
+source ~/.powerlevel10k/powerlevel10k.zsh-theme
+# Default p10k config — skips the interactive wizard on first shell
+if [[ ! -f ~/.p10k.zsh ]]; then
+    cat > ~/.p10k.zsh << 'P10K_CONF'
+# Generated by Silmarillion Stack — classic 2-line prompt with round separators
+POWERLEVEL9K_MODE=nerdfont-v3
+POWERLEVEL9K_OS_ICON_BACKGROUND=2
+POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+POWERLEVEL9K_RPROMPT_ON_NEWLINE=true
+POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX='%242F╭─'
+POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX='%242F╰─'
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon context dir vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status command_execution_time time)
+POWERLEVEL9K_SHOW_CHANGESET=true
+POWERLEVEL9K_CHANGESET_HASH_LENGTH=6
+POWERLEVEL9K_STATUS_VERBOSE=true
+POWERLEVEL9K_TIME_FORMAT='%D{%H:%M}'
+POWERLEVEL9K_DIR_BACKGROUND=4
+POWERLEVEL9K_DIR_FOREGROUND=0
+POWERLEVEL9K_VCS_BACKGROUND=8
+POWERLEVEL9K_VCS_FOREGROUND=0
+POWERLEVEL9K_CONTEXT_DEFAULT_BACKGROUND=2
+POWERLEVEL9K_CONTEXT_DEFAULT_FOREGROUND=0
+POWERLEVEL9K_STATUS_OK_BACKGROUND=2
+POWERLEVEL9K_STATUS_OK_FOREGROUND=0
+POWERLEVEL9K_STATUS_ERROR_BACKGROUND=1
+POWERLEVEL9K_STATUS_ERROR_FOREGROUND=0
+P10K_CONF
+fi
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # --- Atuin history (Rust) ------------------------------------------------
-. "$HOME/.atuin/bin/env"
-eval "$(atuin init zsh)"
+[[ -f "$HOME/.atuin/bin/env" ]] && . "$HOME/.atuin/bin/env"
+eval "$(atuin init zsh 2>/dev/null || true)"
 
 # --- Zoxide (Rust) -------------------------------------------------------
 eval "$(zoxide init zsh)"
@@ -887,8 +963,8 @@ else
 fi
 case "$TERM" in xterm*|rxvt*) PS1="\[\e]0;\u@\h: \w\a\]$PS1";; esac
 
-. "$HOME/.atuin/bin/env"
-eval "$(atuin init bash)"
+[[ -f "$HOME/.atuin/bin/env" ]] && . "$HOME/.atuin/bin/env"
+eval "$(atuin init bash 2>/dev/null || true)"
 eval "$(zoxide init bash)"
 
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
@@ -960,6 +1036,12 @@ fi
 # ── Sheldon lock ─────────────────────────────────────────────────────────
 log "$(msg sheldon_installing)"
 sheldon lock 2>/dev/null && ok "$(msg sheldon_done)" || warn "$(msg sheldon_failed)"
+
+# ── Set ZSH as default shell ────────────────────────────────────────────
+if [[ "$SHELL" != "$(command -v zsh)" ]]; then
+    log "$(msg setting_zsh)"
+    chsh -s "$(command -v zsh)" 2>/dev/null && ok "$(msg zsh_default)" || warn "$(msg zsh_not_default)"
+fi
 
 # ── Done ─────────────────────────────────────────────────────────────────
 echo ""
