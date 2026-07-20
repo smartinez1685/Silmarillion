@@ -26,6 +26,7 @@
 | Node manager | **fnm** | Rust | cargo |
 | Git TUI | **lazygit** | Go | go install |
 | System monitor | **bottom** | Rust | cargo |
+| HTTP client | **xh** (curl wrapper) | Rust | cargo |
 | Markdown viewer | **frogmouth** | Python | pip (venv) |
 | Editor (GUI) | **zed** | Rust | curl script |
 | Ping (ICMP blocked) | **ping** (curl-based) | bash | symlink |
@@ -35,6 +36,13 @@
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/.../install.sh | bash
+```
+
+Or, using the built-in xh-based curl wrapper (no real curl needed after stack is installed):
+
+```bash
+curl.sh -fsSL https://raw.githubusercontent.com/.../install.sh | bash
+source curl.sh && curl -fsSL https://raw.githubusercontent.com/.../install.sh | bash
 ```
 
 Or clone and run locally:

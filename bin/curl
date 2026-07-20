@@ -1,0 +1,218 @@
+#!/usr/bin/env bash
+# =============================================================================
+# curl → xh wrapper — translates curl flags to xh (HTTPie-compatible)
+# Shadows /usr/bin/curl when placed earlier in PATH (~/.local/bin)
+# =============================================================================
+set -euo pipefail
+
+# ── Proxy (inherits from environment, fallback to corporate proxy) ────
+: "${HTTP_PROXY:=http://ft.nube.local:5498/}"
+: "${HTTPS_PROXY:=http://ft.nube.local:5498/}"
+: "${http_proxy:=http://ft.nube.local:5498/}"
+: "${https_proxy:=http://ft.nube.local:5498/}"
+export HTTP_PROXY HTTPS_PROXY http_proxy https_proxy
+
+usage() {
+    echo "curl (xh wrapper) — HTTP/HTTPS client via xh"
+    echo "Usage: curl [options] <url>"
+    echo ""
+    echo "Supported flags (translated to xh):"
+    echo "  -L, --location       Follow redirects (--follow)"
+    echo "  -s, --silent         Quiet mode (--quiet)"
+    echo "  -S, --show-error     (default)"
+    echo "  -v, --verbose        Verbose output"
+    echo "  -I, --head           Fetch headers only"
+    echo "  -X, --request M      HTTP method"
+    echo "  -H, --header 'X: Y'  Add header"
+    echo "  -d, --data 'body'    Request body"
+    echo "  -u, --user user:pass Basic auth (-a)"
+    echo "  -k, --insecure       Skip TLS verification (--verify no)"
+    echo "  -o, --output FILE    Write to file"
+    echo "  -O, --remote-name    Save with remote filename"
+    echo "  -f, --fail           (default in xh)"
+    echo "  --connect-timeout N  Connection timeout"
+    echo "  --max-time N         Overall timeout"
+    echo ""
+    echo "Unsupported flags are silently ignored."
+    exit "${1:-0}"
+}
+
+# ── Parse args ───────────────────────────────────────────────────────────
+xh_args=()
+url=""
+output_file=""
+method=""
+headers_only=false
+silent=false
+
+while [[ $# -gt 0 ]]; do
+    case "$1" in
+        # ── Help ──
+        -h|--help)
+            usage 0
+            ;;
+        # ── Follow redirects ──
+        -L|--location)
+            xh_args+=(--follow)
+            shift
+            ;;
+        # ── Silent / quiet ──
+        -s|--silent)
+            silent=true
+            shift
+            ;; 
+        # ── Show error (default in xh, ignore) ──
+        -S|--show-error)
+            shift
+            ;;
+        # ── Fail on HTTP error (default in xh) ──
+        -f|--fail)
+            shift
+            ;;
+        # ── Verbose ──
+        -v|--verbose)
+            xh_args+=("--verbose")
+            shift
+            ;;
+        # ── Headers only ──
+        -I|--head)
+            headers_only=true
+            shift
+            ;;
+        # ── HTTP method ──
+        -X|--request)
+            method="$2"
+            shift 2
+            ;;
+        # ── Add header ──
+        -H|--header)
+            xh_args+=("$2")
+            shift 2
+            ;;
+        # ── Request body ──
+        -d|--data|--data-raw|--data-ascii)
+            xh_args+=(--body "$2")
+            shift 2
+            ;;
+        --data-binary)
+            # xh doesn't have --data-binary, fall back to --body
+            xh_args+=(--body "$2")
+            shift 2
+            ;;
+        # ── Basic auth ──
+        -u|--user)
+            xh_args+=(-a "$2")
+            shift 2
+            ;;
+        # ── Insecure / skip TLS verify ──
+        -k|--insecure)
+            xh_args+=(--verify no)
+            shift
+            ;;
+        # ── Output file ──
+        -o|--output)
+            output_file="$2"
+            shift 2
+            ;;
+        # ── Remote name (save as server's filename) ──
+        -O|--remote-name)
+            output_file="%(filename)s"
+            shift
+            ;;
+        # ── Timeouts ──
+        --connect-timeout)
+            xh_args+=("--timeout" "$2")
+            shift 2
+            ;;
+        --max-time)
+            xh_args+=("--timeout" "$2")
+            shift 2
+            ;;
+        # ── Write-out (not supported, ignore) ──
+        -w|--write-out)
+            shift 2
+            ;;
+        # ── Proto / TLS flags (not applicable to xh, ignore) ──
+        --proto|--proto-default|--proto-redir)
+            shift 2
+            ;;
+        --tlsv1*|--sslv*)
+            shift
+            ;;
+        # ── Compression (default in xh) ──
+        --compressed)
+            shift
+            ;;
+        # ── Progress bar ──
+        -#|--progress-bar)
+            shift
+            ;;
+        # ── Ignore combined short flags like -fsSL (parse each char) ──
+        -[a-zA-Z0-9][a-zA-Z0-9]*)
+            flags="${1:1}"   # strip leading -
+            shift
+            for (( i=${#flags}-1; i>=0; i-- )); do
+                set -- "-${flags:$i:1}" "$@"
+            done
+            ;;
+        # ── Unrecognized option ──
+        -*)
+            # Silently drop (curl compatibility)
+            shift
+            ;;
+        # ── URL (first non-flag argument) ──
+        *)
+            url="$1"
+            shift
+            ;;
+    esac
+done
+
+# ── Validate ─────────────────────────────────────────────────────────────
+if [[ -z "$url" ]]; then
+    echo "curl: no URL specified" >&2
+    echo "Try 'curl --help' for more information." >&2
+    exit 2
+fi
+
+# ── Convert to xh syntax ─────────────────────────────────────────────────
+# xh syntax: xh [METHOD] URL [HEADER:VALUE ...] [--body ...]
+
+# Build the command array
+cmd=(xh)
+
+# Method
+if [[ -n "$method" ]]; then
+    cmd+=("$method")
+elif $headers_only; then
+    cmd+=(HEAD)
+fi
+
+# URL
+cmd+=("$url")
+
+# Headers / body / flags
+cmd+=("${xh_args[@]}")
+
+# ── Execute ──────────────────────────────────────────────────────────────
+if $silent; then
+    if [[ -n "$output_file" ]]; then
+        if [[ "$output_file" == "%(filename)s" ]]; then
+            exec "${cmd[@]}" --download 2>/dev/null
+        else
+            "${cmd[@]}" > "$output_file" 2>/dev/null
+        fi
+    else
+        exec "${cmd[@]}" 2>/dev/null
+    fi
+else
+    if [[ -n "$output_file" ]]; then
+        if [[ "$output_file" == "%(filename)s" ]]; then
+            exec "${cmd[@]}" --download
+        else
+            "${cmd[@]}" > "$output_file"
+        fi
+    else
+        exec "${cmd[@]}"
+    fi
+fi

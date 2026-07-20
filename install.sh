@@ -665,6 +665,7 @@ cargo_install zoxide
 cargo_install fd-find fd
 cargo_install bottom btm
 cargo_install fnm
+cargo_install xh
 
 # ── Phase 3: Go tools ──────────────────────────────────────────────────
 section "$(msg phase3)"
@@ -1543,6 +1544,12 @@ log "$(msg ping_deploying)"
 mkdir -p "$HOME/.local/bin"
 ln -sf "$REPO_DIR/bin/ping" "$HOME/.local/bin/ping"
 ok "$(msg ping_deployed)"
+
+# ── curl → xh wrapper ────────────────────────────────────────────────────
+log "Deploying xh-based curl wrapper..."
+ln -sf "$REPO_DIR/bin/curl" "$HOME/.local/bin/curl"
+ln -sf "$REPO_DIR/bin/curl.sh" "$HOME/.local/bin/curl.sh"
+ok "curl wrapper deployed (shadows /usr/bin/curl)"
 
 # ── Sheldon lock ─────────────────────────────────────────────────────────
 log "$(msg sheldon_installing)"
