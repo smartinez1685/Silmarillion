@@ -1425,7 +1425,7 @@ return {
         dashboard.button("g", "  LazyGit", "<cmd>LazyGit<cr>"),
         dashboard.button("q", "  Quit", "<cmd>qa<cr>"),
       }
-      dashboard.section.footer.val = "Привет, Alex. Ready to code."
+      dashboard.section.footer.val = "Hallo! Ready to code."
       dashboard.section.header.opts.hl = "AlphaHeader"
       dashboard.section.buttons.opts.hl = "AlphaButtons"
       dashboard.section.footer.opts.hl = "AlphaFooter"
