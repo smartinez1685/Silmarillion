@@ -46,26 +46,28 @@ if [[ -z "$SILMARILLION_LANG" && -t 0 ]]; then
     echo ""
     if command -v whiptail &>/dev/null; then
         choice=$(whiptail --title "Silmarillion Stack" \
-            --menu "Language / Idioma:" 16 55 7 \
+            --menu "Language / Idioma:" 18 55 8 \
             "en" "English" \
             "es" "Español" \
             "de" "Deutsch" \
             "it" "Italiano" \
             "sv" "Svenska" \
             "ru" "Русский" \
-            "pt" "Português" 3>&1 1>&2 2>&3) || true
+            "pt" "Português" \
+            "el" "Ελληνικά" 3>&1 1>&2 2>&3) || true
         SILMARILLION_LANG="${choice:-en}"
     else
         echo ""
         echo "  Select language / Seleccione idioma:"
         echo "  1) English    2) Español    3) Deutsch    4) Italiano"
-        echo "  5) Svenska    6) Русский    7) Português"
-        printf "  Choice [1-7] (default 1): "
+        echo "  5) Svenska    6) Русский    7) Português    8) Ελληνικά"
+        printf "  Choice [1-8] (default 1): "
         read -r lang_choice
         case "$lang_choice" in
             2) SILMARILLION_LANG="es" ;; 3) SILMARILLION_LANG="de" ;;
             4) SILMARILLION_LANG="it" ;; 5) SILMARILLION_LANG="sv" ;;
             6) SILMARILLION_LANG="ru" ;; 7) SILMARILLION_LANG="pt" ;;
+            8) SILMARILLION_LANG="el" ;;
             *) SILMARILLION_LANG="en" ;;
         esac
     fi
@@ -503,6 +505,64 @@ m_step1_pt="1. Abra um novo terminal (o kitty deve aparecer no seu lançador)"
 m_step2_pt="2. O prompt p10k está pré-configurado — execute 'p10k configure' para personalizar"
 m_step3_pt="3. Instale uma versão do Node:  fnm install 22"
 m_step4_pt="4. Execute 'p10k configure' para reconfigurar o prompt"
+# --- Ελληνικά (Greek) ---
+m_running_local_el="Εκτέλεση από τοπικό κλώνο: %s"
+m_cloning_repo_el="Κλωνοποίηση του Silmarillion στο %s..."
+m_clone_fail_el="Αδυναμία κλωνοποίησης. Αν εκτελείτε μέσω curl, κλωνοποιήστε πρώτα:"
+m_clone_cmd_el="  git clone https://github.com/smartinez1685/Silmarillion.git ~/Silmarillion && cd ~/Silmarillion && bash install.sh"
+m_p10k_present_el="Το Powerlevel10k υπάρχει ήδη"
+m_p10k_cloning_el="Κλωνοποίηση Powerlevel10k..."
+m_p10k_cloned_el="Το Powerlevel10k κλωνοποιήθηκε"
+m_rust_installed_el="Το Rust toolchain είναι ήδη εγκατεστημένο (%s)"
+m_rust_installing_el="Εγκατάσταση Rust toolchain..."
+m_rust_done_el="Το Rust εγκαταστάθηκε"
+m_go_installed_el="Το Go είναι ήδη εγκατεστημένο (%s)"
+m_go_installing_el="Τοπική εγκατάσταση Go %s..."
+m_go_done_el="Το Go εγκαταστάθηκε"
+m_already_installed_el="Το %s είναι ήδη εγκατεστημένο"
+m_installing_cargo_el="Εγκατάσταση %s (cargo)..."
+m_install_failed_el="Αποτυχία εγκατάστασης %s"
+m_installing_go_el="Εγκατάσταση %s (go)..."
+m_atuin_installed_el="Το atuin είναι ήδη εγκατεστημένο (%s)"
+m_atuin_installing_el="Εγκατάσταση atuin..."
+m_atuin_done_el="Το atuin εγκαταστάθηκε"
+m_kitty_installed_el="Το kitty είναι ήδη εγκατεστημένο (%s)"
+m_kitty_installing_el="Εγκατάσταση kitty..."
+m_kitty_done_el="Το kitty εγκαταστάθηκε"
+m_frogmouth_installed_el="Το frogmouth είναι ήδη εγκατεστημένο (%s)"
+m_frogmouth_installing_el="Εγκατάσταση frogmouth (venv)..."
+m_frogmouth_done_el="Το frogmouth εγκαταστάθηκε"
+m_zed_installed_el="Το zed είναι ήδη εγκατεστημένο (%s)"
+m_zed_installing_el="Εγκατάσταση zed..."
+m_zed_done_el="Το zed εγκαταστάθηκε"
+m_fonts_installed_el="Nerd Fonts ήδη εγκατεστημένες (%s παραλλαγές)"
+m_fonts_downloading_el="Λήψη Nerd Fonts (60+ οικογένειες)..."
+m_fonts_ask_full_el="Λήψη όλων των 60+ οικογενειών Nerd Font; (~7 GB, αλλιώς μόνο UbuntuMono)"
+m_fonts_downloading_mini_el="Λήψη UbuntuMono Nerd Font..."
+m_fonts_extracting_el="Εξαγωγή γραμματοσειρών..."
+m_fonts_done_el="Nerd Fonts εγκατεστημένες (%s παραλλαγές)"
+m_deploying_configs_el="Ανάπτυξη αρχείων διαμόρφωσης..."
+m_phase1_el="Φάση 1/7 · Θέμα και Εργαλεία"
+m_phase2_el="Φάση 2/7 · Εργαλεία Cargo"
+m_phase3_el="Φάση 3/7 · Εργαλεία Go"
+m_phase4_el="Φάση 4/7 · Εφαρμογές"
+m_phase5_el="Φάση 5/7 · Γραμματοσειρές"
+m_phase6_el="Φάση 6/7 · Αρχεία Διαμόρφωσης"
+m_phase7_el="Φάση 7/7 · Neovim"
+m_sheldon_created_el="~/.config/sheldon/plugins.toml δημιουργήθηκε"
+m_kitty_conf_created_el="~/.config/kitty/kitty.conf δημιουργήθηκε"
+m_zshrc_deployed_el="~/.zshrc αναπτύχθηκε (αντίγραφο στο ~/.zshrc.silmarillion.bak)"
+m_bashrc_deployed_el="~/.bashrc αναπτύχθηκε (αντίγραφο στο ~/.bashrc.silmarillion.bak)"
+m_profile_updated_el="~/.profile ενημερώθηκε (αυτόματη εκκίνηση zsh)"
+m_sheldon_installing_el="Εγκατάσταση προσθηκών sheldon..."
+m_sheldon_done_el="Οι προσθήκες sheldon εγκαταστάθηκαν"
+m_sheldon_failed_el="το sheldon lock απέτυχε"
+m_install_done_el="Το Silmarillion Stack εγκαταστάθηκε!"
+m_next_steps_el="Επόμενα βήματα:"
+m_step1_el="1. Ανοίξτε ένα νέο τερματικό (το kitty θα εμφανιστεί στον εκκινητή σας)"
+m_step2_el="2. Το p10k είναι προ-ρυθμισμένο — εκτελέστε 'p10k configure' για προσαρμογή"
+m_step3_el="3. Εγκαταστήστε μια έκδοση Node:  fnm install 22"
+m_step4_el="4. Εκτελέστε 'p10k configure' για επαναφορά των ρυθμίσεων του prompt"
 
 export PATH="$HOME/.local/bin:$HOME/.cargo/bin:$HOME/.atuin/bin:$HOME/go/bin:$HOME/.local/go/bin:$PATH"
 

@@ -2,7 +2,7 @@
 
 > Un script para controlarlos a todos — un entorno de terminal potenciado por Rust/Go, sin root y autónomo.
 
-[🇬🇧 English](README.md) · [🇩🇪 Deutsch](README.de.md) · [🇮🇹 Italiano](README.it.md) · [🇸🇪 Svenska](README.sv.md) · [🇷🇺 Русский](README.ru.md) · [🇵🇹 Português](README.pt.md)
+[🇬🇧 English](README.md) · [🇩🇪 Deutsch](README.de.md) · [🇮🇹 Italiano](README.it.md) · [🇸🇪 Svenska](README.sv.md) · [🇷🇺 Русский](README.ru.md) · [🇵🇹 Português](README.pt.md) · [🇬🇷 Ελληνικά](README.el.md)
 
 ---
 
