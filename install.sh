@@ -599,6 +599,23 @@ else
     fi
 fi
 
+# ── Bootstrap curl (xh fallback if system curl is missing) ──────────────
+if ! command -v curl &>/dev/null; then
+    log "System curl not found — bootstrapping xh replacement..."
+    if command -v xh &>/dev/null; then
+        mkdir -p "$HOME/.local/bin"
+        if [[ -f "$REPO_DIR/bin/curl" ]]; then
+            ln -sf "$REPO_DIR/bin/curl" "$HOME/.local/bin/curl"
+        fi
+        ok "curl wrapper deployed (xh-based)"
+    elif [[ -f "$REPO_DIR/bin/bootstrap.sh" ]]; then
+        "$REPO_DIR/bin/bootstrap.sh" --skip-install
+    fi
+    if ! command -v curl &>/dev/null; then
+        warn "Could not bootstrap curl — install xh manually (cargo install xh)"
+    fi
+fi
+
 # ── Phase 1: Theme & Toolchains ─────────────────────────────────────────
 section "$(msg phase1)"
 
@@ -1549,6 +1566,7 @@ ok "$(msg ping_deployed)"
 log "Deploying xh-based curl wrapper..."
 ln -sf "$REPO_DIR/bin/curl" "$HOME/.local/bin/curl"
 ln -sf "$REPO_DIR/bin/curl.sh" "$HOME/.local/bin/curl.sh"
+ln -sf "$REPO_DIR/bin/bootstrap.sh" "$HOME/.local/bin/bootstrap.sh"
 ok "curl wrapper deployed (shadows /usr/bin/curl)"
 
 # ── Sheldon lock ─────────────────────────────────────────────────────────

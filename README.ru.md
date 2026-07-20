@@ -33,7 +33,7 @@
 ## Быстрая установка
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/smartinez1685/Silmarillion/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/smartinez1685/Silmarillion/master/install.sh | bash
 ```
 
 Или клонировать и запустить локально:

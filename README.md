@@ -35,14 +35,20 @@
 ## Quick install
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/.../install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/smartinez1685/Silmarillion/master/install.sh | bash
 ```
 
-Or, using the built-in xh-based curl wrapper (no real curl needed after stack is installed):
+**If curl is blocked or unavailable**, bootstrap via xh (Rust-powered HTTP client):
 
 ```bash
-curl.sh -fsSL https://raw.githubusercontent.com/.../install.sh | bash
-source curl.sh && curl -fsSL https://raw.githubusercontent.com/.../install.sh | bash
+# Option 1: bootstrap.sh auto-installs xh + curl wrapper, then runs install.sh
+./bin/bootstrap.sh
+
+# Option 2: source the curl wrapper (uses xh → python3 → wget fallbacks)
+source bin/curl.sh && curl -fsSL https://raw.githubusercontent.com/smartinez1685/Silmarillion/master/install.sh | bash
+
+# Option 3: after xh is installed, curl is transparently replaced
+curl -fsSL https://raw.githubusercontent.com/smartinez1685/Silmarillion/master/install.sh | bash
 ```
 
 Or clone and run locally:
