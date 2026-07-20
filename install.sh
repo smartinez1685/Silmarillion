@@ -862,7 +862,7 @@ fi
 
 # --- Atuin history (Rust) ------------------------------------------------
 [[ -f "$HOME/.atuin/bin/env" ]] && . "$HOME/.atuin/bin/env"
-eval "$(atuin init zsh 2>/dev/null || true)"
+eval "$(timeout 2 atuin init zsh 2>/dev/null || true)"
 
 # --- Zoxide (Rust) -------------------------------------------------------
 eval "$(zoxide init zsh)"
@@ -876,7 +876,7 @@ bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 
 # --- direnv (Go) ---------------------------------------------------------
-eval "$(direnv hook zsh)"
+eval "$(timeout 2 direnv hook zsh 2>/dev/null || true)"
 alias a='direnv allow'
 
 # --- fnm Node.js (Rust) --------------------------------------------------
@@ -964,7 +964,7 @@ fi
 case "$TERM" in xterm*|rxvt*) PS1="\[\e]0;\u@\h: \w\a\]$PS1";; esac
 
 [[ -f "$HOME/.atuin/bin/env" ]] && . "$HOME/.atuin/bin/env"
-eval "$(atuin init bash 2>/dev/null || true)"
+eval "$(timeout 2 atuin init bash 2>/dev/null || true)"
 eval "$(zoxide init bash)"
 
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
@@ -972,7 +972,7 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 [ -f /usr/share/doc/fzf/examples/key-bindings.bash ] && source /usr/share/doc/fzf/examples/key-bindings.bash
 [ -f /usr/share/doc/fzf/examples/completion.bash ] && source /usr/share/doc/fzf/examples/completion.bash
 
-eval "$(direnv hook bash)"
+eval "$(timeout 2 direnv hook bash 2>/dev/null || true)"
 
 export FNM_PATH="$HOME/.local/share/fnm"
 if [ -d "$FNM_PATH" ]; then
