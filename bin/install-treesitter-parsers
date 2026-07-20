@@ -1,0 +1,101 @@
+#!/usr/bin/env bash
+# =============================================================================
+# Install treesitter parsers — compiles from source via git (proxy-aware)
+# Usage: install-treesitter-parsers [lua] [python] [bash] ...
+# =============================================================================
+set -euo pipefail
+
+# ── Corporate proxy ──────────────────────────────────────────────────────
+: "${HTTP_PROXY:=http://ft.nube.local:5498/}"
+: "${HTTPS_PROXY:=http://ft.nube.local:5498/}"
+: "${http_proxy:=http://ft.nube.local:5498/}"
+: "${https_proxy:=http://ft.nube.local:5498/}"
+export HTTP_PROXY HTTPS_PROXY http_proxy https_proxy
+
+PARSER_DIR="${HOME}/.local/share/nvim/site/parser"
+TMP_DIR="$(mktemp -d)"
+trap 'rm -rf "$TMP_DIR"' EXIT
+
+# Default set of parsers
+if [[ $# -eq 0 ]]; then
+    PARSERS=(lua vim python bash yaml javascript html markdown markdown_inline)
+else
+    PARSERS=("$@")
+fi
+
+log()  { echo "[treesitter] $*"; }
+ok()   { echo "  ✓ $*"; }
+fail() { echo "  ✗ $*"; }
+
+mkdir -p "$PARSER_DIR"
+
+for lang in "${PARSERS[@]}"; do
+    # Map language name to repo and org (some repos are under different orgs)
+    case "$lang" in
+        lua)              org="tree-sitter-grammars"; repo="tree-sitter-lua"; src_subdir="" ;;
+        vim)              org="tree-sitter-grammars"; repo="tree-sitter-vim"; src_subdir="" ;;
+        python)           org="tree-sitter";          repo="tree-sitter-python"; src_subdir="" ;;
+        bash)             org="tree-sitter";          repo="tree-sitter-bash"; src_subdir="" ;;
+        yaml)             org="tree-sitter-grammars"; repo="tree-sitter-yaml"; src_subdir="" ;;
+        javascript)       org="tree-sitter";          repo="tree-sitter-javascript"; src_subdir="" ;;
+        html)             org="tree-sitter";          repo="tree-sitter-html"; src_subdir="" ;;
+        markdown)         org="tree-sitter-grammars"; repo="tree-sitter-markdown"; src_subdir="tree-sitter-markdown" ;;
+        markdown_inline)  org="tree-sitter-grammars"; repo="tree-sitter-markdown"; src_subdir="tree-sitter-markdown-inline" ;;
+        *)                org="tree-sitter-grammars"; repo="tree-sitter-${lang}"; src_subdir="" ;;
+    esac
+
+    repo_url="https://github.com/${org}/${repo}.git"
+    clone_dir="$TMP_DIR/${repo}"
+
+    log "Installing $lang..."
+
+    # Clone
+    if git clone --depth 1 "$repo_url" "$clone_dir" 2>/dev/null; then
+        ok "cloned $repo"
+    else
+        fail "clone failed for $repo"
+        continue
+    fi
+
+    # Determine source dir
+    if [[ -n "$src_subdir" ]]; then
+        src_dir="$clone_dir/$src_subdir/src"
+    else
+        src_dir="$clone_dir/src"
+    fi
+
+    if [[ ! -d "$src_dir" ]]; then
+        # Some repos use root-level grammar files
+        if [[ -f "$clone_dir/grammar.js" ]]; then
+            src_dir="$clone_dir"
+        else
+            fail "no source dir found for $lang"
+            continue
+        fi
+    fi
+
+    # Build compiler args
+    cc_args=(-shared -fPIC -O2 -o "$PARSER_DIR/${lang}.so")
+    # Include src dir
+    cc_args+=(-I"$src_dir")
+    # parser.c
+    if [[ -f "$src_dir/parser.c" ]]; then
+        cc_args+=("$src_dir/parser.c")
+    fi
+    # scanner.c (may not exist)
+    if [[ -f "$src_dir/scanner.c" ]]; then
+        cc_args+=("$src_dir/scanner.c")
+    elif [[ -f "$src_dir/scanner.cc" ]]; then
+        cc_args+=(-x c++ "$src_dir/scanner.cc")
+    fi
+
+    if cc "${cc_args[@]}" 2>/dev/null; then
+        ok "compiled ${lang}.so"
+    else
+        fail "compile failed for $lang"
+    fi
+done
+
+echo ""
+echo "Parsers installed in: $PARSER_DIR"
+ls -la "$PARSER_DIR"/

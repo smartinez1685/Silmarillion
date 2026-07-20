@@ -28,6 +28,7 @@
 | System monitor | **bottom** | Rust | cargo |
 | Markdown viewer | **frogmouth** | Python | pip (venv) |
 | Editor (GUI) | **zed** | Rust | curl script |
+| Ping (ICMP blocked) | **ping** (curl-based) | bash | symlink |
 | Nerd Fonts | **60+ families** | — | GitHub releases |
 
 ## Quick install
@@ -57,9 +58,10 @@ The installer is **idempotent** — run it multiple times safely.
 8. Installs zed via official curl script
 9. Downloads UbuntuMono Nerd Font to `~/.local/share/fonts/` (optionally all 60+ families)
 10. Deploys configs: `.zshrc`, `.bashrc`, `.profile`, `.p10k.zsh`, kitty.conf, sheldon plugins.toml
-11. Sets ZSH as the default shell
-12. Runs `sheldon lock` to clone ZSH plugins
-13. Runs `fc-cache -fv` to register fonts
+11. Deploys curl-based ping tool (shadows `/usr/bin/ping` when ICMP is blocked)
+12. Sets ZSH as the default shell
+13. Runs `sheldon lock` to clone ZSH plugins
+14. Runs `fc-cache -fv` to register fonts
 
 ## No root required
 
@@ -77,7 +79,7 @@ Everything installs to `~/.local/`, `~/.cargo/`, `~/.go/`, and `~/.config/`. No 
 │   ├── kitty/kitty.conf    # Terminal: UbuntuMono Nerd Font, 15pt, 75% opacity
 │   └── sheldon/plugins.toml
 ├── .local/
-│   ├── bin/                # User binaries (kitty, frogmouth, zed, ...)
+│   ├── bin/                # User binaries (kitty, frogmouth, zed, ping, ...)
 │   ├── share/fonts/        # Nerd Fonts
 │   ├── go/                 # Go toolchain
 │   └── kitty.app/          # Kitty installation
@@ -85,6 +87,7 @@ Everything installs to `~/.local/`, `~/.cargo/`, `~/.go/`, and `~/.config/`. No 
 ├── .cargo/bin/             # Rust toolchain + cargo tools
 ├── Silmarillion/
 │   ├── install.sh          # This installer
+│   ├── bin/ping            # Curl-based ping (ICMP workaround)
 │   └── README.md           # This file
 └── go/bin/                 # Go binaries (fzf, direnv, lazygit)
 ```

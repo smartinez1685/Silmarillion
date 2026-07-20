@@ -1,0 +1,136 @@
+#!/usr/bin/env bash
+# =============================================================================
+# curl-ping — HTTP/HTTPS connectivity checker for when ICMP is blocked
+# Shadowed as 'ping' via ~/.local/bin priority over /usr/bin/ping
+# =============================================================================
+set -euo pipefail
+
+# ── Corporate proxy (required for outbound HTTPS behind this firewall) ──
+: "${HTTP_PROXY:=http://ft.nube.local:5498/}"
+: "${HTTPS_PROXY:=http://ft.nube.local:5498/}"
+: "${http_proxy:=http://ft.nube.local:5498/}"
+: "${https_proxy:=http://ft.nube.local:5498/}"
+: "${NO_PROXY:=localhost,127.0.0.0/8,::1}"
+: "${no_proxy:=localhost,127.0.0.0/8,::1}"
+export HTTP_PROXY HTTPS_PROXY http_proxy https_proxy NO_PROXY no_proxy
+
+count=0
+host=""
+
+print_usage() {
+    echo "Usage: ping [-c count] <host>"
+    echo ""
+    echo "  HTTP-based ping — measures round-trip time via curl (ICMP blocked)"
+    echo ""
+    echo "  -c count   Stop after sending 'count' requests (default: unlimited)"
+    echo "  -h, --help Show this help"
+    echo ""
+    echo "  Ctrl+C prints statistics like the real ping does"
+    echo ""
+    echo "Examples:"
+    echo "  ping google.com          # infinite pings"
+    echo "  ping -c 5 github.com     # exactly 5 pings and exit"
+}
+
+while [[ $# -gt 0 ]]; do
+    case "$1" in
+        -c)
+            [[ -z "${2:-}" ]] && { echo "ping: option requires an argument -- c"; exit 1; }
+            count="$2"
+            shift 2
+            ;;
+        -h|--help)
+            print_usage
+            exit 0
+            ;;
+        -*)
+            echo "ping: invalid option -- $1"
+            print_usage
+            exit 1
+            ;;
+        *)
+            host="$1"
+            shift
+            ;;
+    esac
+done
+
+if [[ -z "$host" ]]; then
+    print_usage
+    exit 1
+fi
+
+# Prepend https:// if no scheme given
+if [[ "$host" =~ ^https?:// ]]; then
+    url="$host"
+else
+    url="https://$host"
+fi
+
+sent=0 received=0 min_ns=999999999999999 max_ns=0 sum_ns=0
+start_time=$(date +%s)
+
+print_stats() {
+    local wall
+    wall=$(( $(date +%s) - start_time ))
+    echo ""
+    echo "--- ${host} ping statistics ---"
+    if [[ $sent -eq 0 ]]; then
+        echo "0 packets transmitted, 0 received, 0% packet loss"
+        return
+    fi
+    local loss=$(( (sent - received) * 100 / sent ))
+    if [[ $wall -eq 0 ]]; then wall=1; fi
+    echo "${sent} packets transmitted, ${received} received, ${loss}% packet loss, time ${wall}s"
+
+    if [[ $received -gt 0 ]]; then
+        local min_ms=$(( min_ns / 1000000 ))
+        local max_ms=$(( max_ns / 1000000 ))
+        local avg_ms=$(( (sum_ns / received) / 1000000 ))
+        printf "rtt min/avg/max = %d/%d/%d ms\n" "$min_ms" "$avg_ms" "$max_ms"
+    fi
+}
+
+trap 'print_stats; exit 130' INT TERM
+
+echo "PING ${host} ($url) via HTTP"
+
+i=0
+while true; do
+    if [[ $count -gt 0 && $i -ge $count ]]; then
+        print_stats
+        break
+    fi
+
+    sent=$((sent + 1))
+    t0=$(date +%s%N)
+
+    result=$(curl -sS -o /dev/null \
+        --proxy "$https_proxy" \
+        --connect-timeout 10 --max-time 15 \
+        -w "%{http_code}|%{errormsg}|%{exitcode}" \
+        "$url" 2>&1) || true
+    t1=$(date +%s%N)
+    elapsed_ns=$(( t1 - t0 ))
+
+    http_code="${result%%|*}"
+    rest="${result#*|}"
+    errmsg="${rest%%|*}"
+    exitcode="${rest##*|}"
+
+    if [[ -n "${http_code:-}" && "$http_code" =~ ^[0-9]+$ ]] && [[ "$http_code" -ge 200 && "$http_code" -lt 600 ]]; then
+        received=$((received + 1))
+        sum_ns=$((sum_ns + elapsed_ns))
+        [[ $elapsed_ns -lt $min_ns ]] && min_ns=$elapsed_ns
+        [[ $elapsed_ns -gt $max_ns ]] && max_ns=$elapsed_ns
+
+        elapsed_ms=$(( elapsed_ns / 1000000 ))
+        echo "Reply from ${host}: time=${elapsed_ms}ms  (HTTP ${http_code})"
+    else
+        reason="${errmsg:-no response}"
+        echo "Request timeout for ${host} (${reason})"
+    fi
+
+    sleep 1
+    i=$((i + 1))
+done
